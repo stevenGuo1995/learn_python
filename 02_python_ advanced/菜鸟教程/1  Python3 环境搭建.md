@@ -19,15 +19,22 @@ Source Code 可用于 Linux 上的安装。
 以下为不同平台上安装 Python3 的方法。
 以下为在 Unix & Linux 平台上安装 Python 的简单步骤：
 以 Python3.6.1 版本为例：
-```
-# tar -zxvf Python-3.6.1.tgz
-# cd Python-3.6.1
-# ./configure
-# make && make install
+```
+
+# tar -zxvf Python-3.6.1.tgz
+
+# cd Python-3.6.1
+
+# ./configure
+
+# make && make install
+
 ```
 检查 Python3 是否正常可用：
-```# python3 -V
-Python 3.6.1```
+```
+# python3 -V
+Python 3.6.1
+```
 以下为在 Window 平台上安装 Python 的简单步骤。
 打开 WEB 浏览器访问 https://www.python.org/downloads/windows/ ，一般就下载 executable installer，x86 表示是 32 位机子的，x86-64 表示 64 位机子的。 
 
@@ -49,7 +56,8 @@ Unix或Windows中路径变量为PATH（UNIX区分大小写，Windows不区分大
 ```path=%path%;C:\Python ```
 注意: C:\Python 是Python的安装目录。
 也可以通过以下方式设置：
-
+
+
 
 ---
 ## Python 环境变量
@@ -72,14 +80,17 @@ PYTHONHOME   |另一种模块搜索路径。它通常内嵌于的PYTHONSTARTUP�
 -O|生成优化代码 ( .pyo 文件 )
 -S|启动时不引入查找Python路径的位置
 -V|输出Python版本号
--X|
+-X|
+
 从 1.6版本之后基于内建的异常（仅仅用于字符串）已过时。
 -c cmd|执行 Python 脚本，并将运行结果作为 cmd 字符串。
 file|在给定的python文件执行python脚本。
 ---
-## 在 Cloud Studio 中运行 Python3 程序
+## 在 Cloud Studio 中运行 Python3 程序
 
-出现以下画面则说明 Python3 已经成功安装，你可以通过 python3 命令使用 Python3 解释器来运行你的 Python3 程序。至此，Python3 已经安装完毕，你可以在 Cloud Studio 上运行 Python3 程序
+
+出现以下画面则说明 Python3 已经成功安装，你可以通过 python3 命令使用 Python3 解释器来运行你的 Python3 程序。至此，Python3 已经安装完毕，你可以在 Cloud Studio 上运行 Python3 程序
+
 
 有任何疑问，可以查阅帮助文档
 现在 CODING 正在举办一场基于 Cloud Studio 工作空间的【我最喜爱的 Cloud Studio 插件评选大赛】。进入活动官网：https://studio.qcloud.coding.net/campaign/favorite-plugins/index，了解更多活动信息。
