@@ -14,7 +14,8 @@ Python 有三种方法解析 XML，SAX，DOM，以及 ElementTree:
 Python 标准库包含 SAX 解析器，SAX 用事件驱动模型，通过在解析 XML 的过程中触发一个个的事件并调用用户定义的回调函数来处理 XML 文件。
 将 XML 数据在内存中解析成一个树，通过对树的操作来操作 XML。
 本章节使用到的 XML 实例文件 movies.xml 内容如下：
-```
+```
+
 <collection shelf="New Arrivals">
 <movie title="Enemy Behind">
    <type>War, Thriller</type>
@@ -48,6 +49,7 @@ Python 标准库包含 SAX 解析器，SAX 用事件驱动模型，通过在解�
    <description>Viewable boredom</description>
 </movie>
 </collection>
+
 ```
 ---
 ## Python 使用 SAX 解析 xml

@@ -18,23 +18,29 @@ print (miles)
 print (name)
 ```
 执行以上程序会输出如下结果：
-```
+```
+
 100
 1000.0
 runoob
+
 ```
 
 Python允许你同时为多个变量赋值。例如：
-```
+```
+
 a = b = c = 1
+
 ```
 
 以上实例，创建一个整型对象，值为 1，从后向前赋值，三个变量被赋予相同的数值。
 
 
 您也可以为多个对象指定多个变量。例如：
-```
-a, b, c = 1, 2, "runoob"```
+```
+
+a, b, c = 1, 2, "runoob"
+```
 
 以上实例，两个整型对象 1 和 2 的分配给变量 a 和 b，字符串对象 "runoob" 分配给变量 c。
 ---
@@ -49,10 +55,12 @@ Python3 支持 int、float、bool、complex（复数）。
 在Python 3里，只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。
 像大多数语言一样，数值类型的赋值和计算都是很直观的。
 内置的 type() 函数可以用来查询变量所指的对象类型。
-```
+```
+
 >>> a, b, c, d = 20, 5.5, True, 4+3j
 >>> print(type(a), type(b), type(c), type(d))
 <class 'int'> <class 'float'> <class 'bool'> <class 'complex'>
+
 ```
 此外还可以用 isinstance 来判断：
 ```
@@ -64,7 +72,8 @@ True
 ```
 
 isinstance 和 type 的区别在于：
-```
+```
+
 >>> class A:
 ...     pass
 ... 
@@ -79,23 +88,30 @@ True
 True
 >>> type(B()) == A
 False
+
 ```
 当你指定一个值时，Number 对象就会被创建：
-```
+```
+
 var1 = 1
 var2 = 10
+
 ```
 
 您也可以使用del语句删除一些对象引用。
 
 del语句的语法是：
-```
+```
+
 del var1[,var2[,var3[....,varN]]]
+
 ```
 您可以通过使用del语句删除单个或多个对象。例如：
-```
+```
+
 del var
-del var_a, var_b```
+del var_a, var_b
+```
 ```
 ## 实例
 >>>5 + 4  # 加法
@@ -128,7 +144,9 @@ Python还支持复数，复数由实数部分和虚数部分构成，可以用a 
 ## String（字符串）
 Python中的字符串用单引号 ' 或双引号 " 括起来，同时使用反斜杠 \ 转义特殊字符。
 字符串的截取的语法格式如下：
-```变量[头下标:尾下标]```
+```
+变量[头下标:尾下标]
+```
 索引值以 0 为开始值，-1 为从末尾的开始位置。
 
 加号  +  是字符串的连接符， 星号  *  表示复制当前字符串，紧跟的数字为复制的次数。实例如下：
@@ -147,7 +165,8 @@ print (str * 2)      # 输出字符串两次
 print (str + "TEST") # 连接字符串
 ```
 执行以上程序会输出如下结果：
-```
+```
+
 Runoob
 Runoo
 R
@@ -155,15 +174,18 @@ noo
 noob
 RunoobRunoob
 RunoobTEST
+
 ```
 Python 使用反斜杠(\)转义特殊字符，如果你不想让反斜杠发生转义，可以在字符串前面添加一个 r，表示原始字符串：
-```
+```
+
 >>> print('Ru\noob')
 Ru
 oob
 >>> print(r'Ru\noob')
 Ru\noob
 >>> 
+
 ```
 
 另外，反斜杠(\)可以作为续行符，表示下一行是上一行的延续。也可以使用 """...""" 或者 '''...''' 跨越多行。
@@ -191,7 +213,9 @@ List（列表） 是 Python 中使用最频繁的数据类型。
 和字符串一样，列表同样可以被索引和截取，列表被截取后返回一个包含所需元素的新列表。
 
 列表截取的语法格式如下：
-```变量[头下标:尾下标]```
+```
+变量[头下标:尾下标]
+```
 索引值以 0 为开始值，-1 为从末尾的开始位置。
 
 加号 + 是列表连接运算符，星号 * 是重复操作。如下实例：
@@ -211,13 +235,15 @@ print (tinylist * 2)    # 输出两次列表
 print (list + tinylist) # 连接列表
 ```
 以上实例输出结果：
-```
+```
+
 ['abcd', 786, 2.23, 'runoob', 70.2]
 abcd
 [786, 2.23]
 [2.23, 'runoob', 70.2]
 [123, 'runoob', 123, 'runoob']
 ['abcd', 786, 2.23, 'runoob', 70.2, 123, 'runoob']
+
 ```
 与Python字符串不一样的是，列表中的元素是可以改变的：
 ```
@@ -241,7 +267,9 @@ Python 列表截取可以接收第三个参数，参数作用是截取的步长�
 def(input)# 通过空格将字符串分隔符，把各个单词分隔为列表=inputsplit(" ")# 翻转字符串# 假设列表 list = [1,2,3,4],  # list[0]=1, list[1]=2 ，而 -1 表示最后一个元素 list[-1]=4 ( 与 list[3]=4 一样) # inputWords[-1::-1] 有三个参数# 第一个参数 -1 表示最后一个元素# 第二个参数为空，表示移动到列表末尾# 第三个参数为步长，-1 表示逆向=[11]# 重新组合字符串=' 'join()returnif=="__main__"input='I like runoob'=(input)print()
 ```
 输出结果为：
-```runoob like I```
+```
+runoob like I
+```
 ---
 ## Tuple（元组）
 元组（tuple）与列表类似，不同之处在于元组的元素不能修改。元组写在小括号 () 里，元素之间用逗号隔开。
@@ -263,13 +291,15 @@ print (tinytuple * 2)     # 输出两次元组
 print (tuple + tinytuple) # 连接元组
 ```
 以上实例输出结果：
-```
+```
+
 ('abcd', 786, 2.23, 'runoob', 70.2)
 abcd
 (786, 2.23)
 (2.23, 'runoob', 70.2)
 (123, 'runoob', 123, 'runoob')
 ('abcd', 786, 2.23, 'runoob', 70.2, 123, 'runoob')
+
 ```
 元组与字符串类似，可以被索引且下标索引从0开始，-1 为从末尾开始的位置。也可以进行截取（看上面，这里不再赘述）。
 其实，可以把字符串看作一种特殊的元组。
@@ -292,9 +322,11 @@ TypeError: 'tuple' object does not support item assignment
 
 构造包含 0 个或 1 个元素的元组比较特殊，所以有一些额外的语法规则：
 
-```
+```
+
 tup1 = ()    # 空元组
 tup2 = (20,) # 一个元素，需要在元素后添加逗号
+
 ```
 string、list 和 tuple 都属于 sequence（序列）。
 注意：
@@ -306,9 +338,11 @@ string、list 和 tuple 都属于 sequence（序列）。
 可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
 
 创建格式：
-```parame = {value01,value02,...}
+```
+parame = {value01,value02,...}
 或者
-set(value)```
+set(value)
+```
 ```
 ## 实例
 #!/usr/bin/python3
@@ -339,7 +373,8 @@ print(a & b)     # a 和 b 的交集
 print(a ^ b)     # a 和 b 中不同时存在的元素
 ```
 以上实例输出结果：
-```
+```
+
 {'Mary', 'Jim', 'Rose', 'Jack', 'Tom'}
 Rose 在集合中
 {'b', 'a', 'c', 'r', 'd'}
@@ -347,6 +382,7 @@ Rose 在集合中
 {'l', 'r', 'a', 'c', 'z', 'm', 'b', 'd'}
 {'a', 'c'}
 {'l', 'r', 'z', 'm', 'b', 'd'}
+
 ```
 ---
 ## Dictionary（字典）
@@ -375,12 +411,14 @@ print (tinydict.keys())   # 输出所有键
 print (tinydict.values()) # 输出所有值
 ```
 以上实例输出结果：
-```
+```
+
 1 - 菜鸟教程
 2 - 菜鸟工具
 {'name': 'runoob', 'code': 1, 'site': 'www.runoob.com'}
 dict_keys(['name', 'code', 'site'])
 dict_values(['runoob', 1, 'www.runoob.com'])
+
 ```
 构造函数 dict() 可以直接从键值对序列中构建字典如下：
 ```

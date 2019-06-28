@@ -2,9 +2,13 @@
 Python  open() 方法用于打开一个文件，并返回文件对象，在对文件进行处理过程都需要使用到这个函数，如果该文件无法被打开，会抛出 OSError。
 注意：使用 open() 方法一定要保证关闭文件对象，即调用 close() 方法。
 open() 函数常用形式是接收两个参数：文件名(file)和模式(mode)。
-```open(file, mode='r')```
+```
+open(file, mode='r')
+```
 完整的语法格式为：
-```open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)```
+```
+open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+```
 参数说明:
 mode 参数有：
 模式|描述

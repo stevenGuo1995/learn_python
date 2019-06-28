@@ -18,7 +18,8 @@ for i in sys.argv:
 print('\n\nPython 路径为：', sys.path, '\n')
 ```
 执行结果如下所示：
-```
+```
+
 $ python using_sys.py 参数1 参数2
 命令行参数如下:
 using_sys.py
@@ -28,12 +29,15 @@ using_sys.py
 
 Python 路径为： ['/root', '/usr/lib/python3.4', '/usr/lib/python3.4/plat-x86_64-linux-gnu', '/usr/lib/python3.4/lib-dynload', '/usr/local/lib/python3.4/dist-packages', '/usr/lib/python3/dist-packages'] 
 
+
 ```
 ---
 ## import 语句
 想使用 Python 源文件，只需在另一个源文件里执行 import 语句，语法如下：
-```
+```
+
 import module1[, module2[,... moduleN]
+
 ```
 
 当解释器遇到 import 语句，如果模块在当前的搜索路径就会被导入。
@@ -62,9 +66,11 @@ support.print_func("Runoob")
 ```
 
 以上实例输出结果：
-```
+```
+
 $ python3 test.py 
 Hello :  Runoob
+
 ```
 一个模块只会被导入一次，不管你执行了多少次import。这样可以防止导入模块被一遍又一遍地执行。
 当我们使用import语句的时候，Python解释器是怎样找到对应的文件的呢？
@@ -74,11 +80,13 @@ Hello :  Runoob
 这看起来很像环境变量，事实上，也可以通过定义环境变量的方式来确定搜索路径。
 搜索路径是在Python编译或安装的时候确定的，安装新的库应该也会修改。搜索路径被存储在sys模块中的path变量，做一个简单的实验，在交互式解释器中，输入以下代码：
 
-```
+```
+
 >>> import sys
 >>> sys.path
 ['', '/usr/lib/python3.4', '/usr/lib/python3.4/plat-x86_64-linux-gnu', '/usr/lib/python3.4/lib-dynload', '/usr/local/lib/python3.4/dist-packages', '/usr/lib/python3/dist-packages']
 >>> 
+
 ```
 sys.path 输出是一个列表，其中第一项是空串''，代表当前目录（若是从一个脚本中打印出来的话，可以更清楚地看出是哪个目录），亦即我们执行python解释器的目录（对于脚本的话就是运行的脚本所在的目录）。
 
@@ -110,8 +118,10 @@ def fib2(n): # 返回到 n 的斐波那契数列
     return result
 ```
 然后进入Python解释器，使用下面的命令导入这个模块：
-```
+```
+
 >>> import fibo
+
 ```
 这样做并没有把直接定义在fibo中的函数名称写入到当前符号表里，只是把模块fibo的名字写到了那里。
 
@@ -128,23 +138,29 @@ def fib2(n): # 返回到 n 的斐波那契数列
 'fibo'
 ```
 如果你打算经常使用一个函数，你可以把它赋给一个本地的名称：
-```
+```
+
 >>> fib = fibo.fib
 >>> fib(500)
 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+
 ```
 ---
 ## 
 from … import 语句
 Python 的 from 语句让你从模块中导入一个指定的部分到当前命名空间中，语法如下：
-```
+```
+
 from modname import name1[, name2[, ... nameN]]
+
 ```
 例如，要导入模块 fibo 的 fib 函数，使用如下语句：
-```
+```
+
 >>> from fibo import fib, fib2
 >>> fib(500)
 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+
 ```
 这个声明不会把整个fibo模块导入到当前的命名空间中，它只会将fibo里的fib函数引入进来。
 ---
@@ -152,8 +168,10 @@ from modname import name1[, name2[, ... nameN]]
 
 把一个模块的所有内容全都导入到当前的命名空间也是可行的，只需使用如下声明：
 
-```
+```
+
 from modname import *
+
 ```
 这提供了一个简单的方法来导入一个模块中的所有项目。然而这种声明不该被过多地使用。
 
@@ -170,19 +188,23 @@ from modname import *
 模块是可以导入其他模块的。在一个模块（或者脚本，或者其他地方）的最前面使用 import 来导入一个模块，当然这只是一个惯例，而不是强制的。被导入的模块的名称将被放入当前操作的模块的符号表中。
 
 还有一种导入的方法，可以使用 import 直接把模块内（函数，变量的）名称导入到当前操作模块。比如:
-```
+```
+
 >>> from fibo import fib, fib2
 >>> fib(500)
 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+
 ```
 这种导入的方法不会把被导入的模块的名称放在当前的字符表中（所以在这个例子里面，fibo 这个名称是没有定义的）。 
 
 这还有一种方法，可以一次性的把模块中的所有（函数，变量）名称都导入到当前模块的字符表: 
 
-```
+```
+
 >>> from fibo import *
 >>> fib(500)
 1 1 2 3 5 8 13 21 34 55 89 144 233 377
+
 ```
 这将把所有的名字都导入进来，但是那些由单一下划线（_）开头的名字不在此例。大多数情况， Python程序员不使用这种方法，因为引入的其它来源的命名，很可能覆盖了已有的定义。 
 
@@ -191,7 +213,8 @@ from modname import *
 
 一个模块被另一个程序第一次引入时，其主程序将运行。如果我们想在模块被引入时，模块中的某一程序块不执行，我们可以用__name__属性来使该程序块仅在该模块自身运行时执行。
 
-```
+```
+
 #!/usr/bin/python3
 # Filename: using_name.py
 
@@ -199,19 +222,24 @@ if __name__ == '__main__':
    print('程序自身在运行')
 else:
    print('我来自另一模块')
+
 ```
 
 运行输出如下：
 
-```
+```
+
 $ python using_name.py
 程序自身在运行
+
 ```
-```
+```
+
 $ python
 >>> import using_name
 我来自另一模块
 >>>
+
 ```
 
 说明：
@@ -222,7 +250,8 @@ $ python
 
 内置的函数 dir() 可以找到模块内定义的所有名称。以一个字符串列表的形式返回:
 
-```
+```
+
 >>> import fibo, sys
 >>> dir(fibo)
 ['__name__', 'fib', 'fib2']
@@ -244,9 +273,11 @@ $ python
  'setcheckinterval', 'setdlopenflags', 'setprofile', 'setrecursionlimit',
  'setswitchinterval', 'settrace', 'stderr', 'stdin', 'stdout',
  'thread_info', 'version', 'version_info', 'warnoptions']
+
 ```
 如果没有给定参数，那么 dir() 函数会罗列出当前定义的所有名称:
-```
+```
+
 >>> a = [1, 2, 3, 4, 5]
 >>> import fibo
 >>> fib = fibo.fib
@@ -261,6 +292,7 @@ $ python
 >>> dir()
 ['__builtins__', '__doc__', '__name__', 'sys']
 >>>
+
 ```
 ---
 ## 标准模块
@@ -271,7 +303,8 @@ Python 本身带着一些标准的模块库，在 Python 库参考文档中将�
 这些组件会根据不同的操作系统进行不同形式的配置，比如 winreg 这个模块就只会提供给 Windows 系统。
 应该注意到这有一个特别的模块 sys ，它内置在每一个 Python 解析器中。变量 sys.ps1 和 sys.ps2 定义了主提示符和副提示符所对应的字符串:
 
-```
+```
+
 >>> import sys
 >>> sys.ps1
 '>>> '
@@ -281,6 +314,7 @@ Python 本身带着一些标准的模块库，在 Python 库参考文档中将�
 C> print('Runoob!')
 Runoob!
 C> 
+
 ```
 ---
 ## 包
@@ -300,7 +334,8 @@ C>
 这里给出了一种可能的包结构（在分层的文件系统中）: 
 
 
-```
+```
+
 sound/                          顶层包
       __init__.py               初始化 sound 包
       formats/                  文件格式转换子包
@@ -324,6 +359,7 @@ sound/                          顶层包
               vocoder.py
               karaoke.py
               ...
+
 ```
 
 在导入一个包的时候，Python 会根据 sys.path 中的目录来寻找这个包中包含的子目录。 
@@ -335,28 +371,38 @@ sound/                          顶层包
 
 
 用户可以每次只导入一个包里面的特定模块，比如: 
-```
+```
+
 import sound.effects.echo
+
 ```
 
 这将会导入子模块:sound.effects.echo。 他必须使用全名去访问: 
-```
+```
+
 sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
+
 ```
 
 还有一种导入子模块的方法是:  
-```
+```
+
 from sound.effects import echo
+
 ```
 
 这同样会导入子模块: echo，并且他不需要那些冗长的前缀，所以他可以这样使用: 
-```
+```
+
 echo.echofilter(input, output, delay=0.7, atten=4)
+
 ```
 
 还有一种变化就是直接导入一个函数或者变量:  
-```
+```
+
 from sound.effects.echo import echofilter
+
 ```
 
 同样的，这种方法会导入子模块: echo，并且可以直接使用他的 echofilter() 函数: 
@@ -396,8 +442,10 @@ Python 会进入文件系统，找到这个包里面所有的子模块，一个�
 作为包的作者，可别忘了在更新包之后保证 __all__ 也更新了啊。你说我就不这么做，我就不使用导入*这种用法，好吧，没问题，谁让你是老板呢。这里有一个例子，在:file:sounds/effects/__init__.py中包含如下代码:
 
 
-```
+```
+
 __all__ = ["echo", "surround", "reverse"]
+
 ```
 
 这表示当你使用from sound.effects import *这种用法时，你只会导入包里面这三个子模块。 
@@ -406,10 +454,12 @@ __all__ = ["echo", "surround", "reverse"]
 如果 __all__ 真的没有定义，那么使用from sound.effects import *这种语法的时候，就不会导入包 sound.effects 里的任何子模块。他只是把包sound.effects和它里面定义的所有内容导入进来（可能运行__init__.py里定义的初始化代码）。 
 
 这会把 __init__.py 里面定义的所有名字导入进来。并且他不会破坏掉我们在这句话之前导入的所有明确指定的模块。看下这部分代码:  
-```
+```
+
 import sound.effects.echo
 import sound.effects.surround
 from sound.effects import *
+
 ```
 
 这个例子中，在执行from...import前，包sound.effects中的echo和surround模块都被导入到当前的命名空间中了。（当然如果定义了__all__就更没问题了）
@@ -421,10 +471,12 @@ from sound.effects import *
 记住，使用from Package import specific_submodule这种方法永远不会有错。事实上，这也是推荐的方法。除非是你要导入的子模块有可能和其他包的子模块重名。
 
 如果在结构中包是一个子包（比如这个例子中对于包sound来说），而你又想导入兄弟包（同级别的包）你就得使用导入绝对的路径来导入。比如，如果模块sound.filters.vocoder 要使用包sound.effects中的模块echo，你就要写成 from sound.effects import echo。
-```
+```
+
 from . import echo
 from .. import formats
 from ..filters import equalizer
+
 ```
 
 无论是隐式的还是显式的相对导入都是从当前模块开始的。主模块的名字永远是"__main__"，一个Python应用程序的主模块，应当总是使用绝对路径引用。 

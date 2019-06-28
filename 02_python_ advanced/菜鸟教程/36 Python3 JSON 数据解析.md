@@ -41,9 +41,11 @@ print ("Python 原始数据：", repr(data))
 print ("JSON 对象：", json_str)
 ```
 执行以上代码输出结果为：
-```
+```
+
 Python 原始数据： {'url': 'http://www.runoob.com', 'no': 1, 'name': 'Runoob'}
 JSON 对象： {"url": "http://www.runoob.com", "no": 1, "name": "Runoob"}
+
 ```
 通过输出的结果可以看出，简单类型通过编码后跟其原始的repr()输出结果非常相似。
 接着以上实例，我们可以将一个JSON编码的字符串转换回一个Python数据结构：
@@ -70,11 +72,13 @@ print ("data2['name']: ", data2['name'])
 print ("data2['url']: ", data2['url'])
 ```
 执行以上代码输出结果为：
-```
+```
+
 Python 原始数据： {'name': 'Runoob', 'no': 1, 'url': 'http://www.runoob.com'}
 JSON 对象： {"name": "Runoob", "no": 1, "url": "http://www.runoob.com"}
 data2['name']:  Runoob
 data2['url']:  http://www.runoob.com
+
 ```
 如果你要处理的是文件而不是字符串，你可以使用 json.dump() 和 json.load() 来编码和解码JSON数据。例如：
 ```

@@ -18,8 +18,10 @@ CGI架构图
 在你进行CGI编程前，确保您的Web服务器支持CGI及已经配置了CGI的处理程序。
 Apache 支持CGI 配置：
 设置好CGI目录：
-```
+```
+
 ScriptAlias /cgi-bin/ /var/www/cgi-bin/
+
 ```
 
 所有的HTTP服务器执行CGI程序都保存在一个预先配置的目录。这个目录被称为CGI目录，并按照惯例，它被命名为/var/www/cgi-bin目录。
@@ -29,21 +31,26 @@ CGI文件的扩展名为.cgi，python也可以使用.py扩展名。
 默认情况下，Linux服务器配置运行的cgi-bin目录中为/var/www。
 
 如果你想指定其他运行CGI脚本的目录，可以修改httpd.conf配置文件，如下所示：
-```
+```
+
 <Directory "/var/www/cgi-bin">
    AllowOverride None
    Options +ExecCGI
    Order allow,deny
    Allow from all
 </Directory>
+
 ```
 在 AddHandler 中添加 .py 后缀，这样我们就可以访问 .py 结尾的 python 脚本文件：
-```
-AddHandler cgi-script .cgi .pl .py```
+```
+
+AddHandler cgi-script .cgi .pl .py
+```
 ---
 ## 第一个CGI程序
 我们使用Python创建第一个CGI程序，文件名为hello.py，文件位于/var/www/cgi-bin目录中，内容如下：
-```
+```
+
 #!/usr/bin/python3
 
 print ("Content-type:text/html")
@@ -57,9 +64,12 @@ print ('<body>')
 print ('<h2>Hello Word! 我是来自菜鸟教程的第一CGI程序</h2>')
 print ('</body>')
 print ('</html>')
+
 ```
 文件保存后修改 hello.py，修改文件权限为 755：
-```chmod 755 hello.py ```
+```
+chmod 755 hello.py 
+```
 以上程序在浏览器访问显示结果如下：
 
 
@@ -69,13 +79,17 @@ print ('</html>')
 ## HTTP头部
 hello.py文件内容中的" Content-type:text/html"即为HTTP头部的一部分，它会发送给浏览器告诉浏览器文件的内容类型。
 HTTP头部的格式如下：
-```
+```
+
 HTTP 字段名: 字段内容
+
 ```
 
 例如：
-```
-Content-type: text/html```
+```
+
+Content-type: text/html
+```
 以下表格介绍了CGI程序中HTTP头部经常使用的信息：
 头|描述
 :-:|:-:
@@ -104,7 +118,8 @@ SCRIPT_NAME|CGI脚本的的名称
 SERVER_NAME|这是你的 WEB 服务器的主机名、别名或IP地址。
 SERVER_SOFTWARE|这个环境变量的值包含了调用CGI程序的HTTP服务器的名称和版本号。例如，上面的值为Apache/2.2.14(Unix)
 以下是一个简单的CGI脚本输出CGI的环境变量：
-```
+```
+
 #!/usr/bin/python3
 
 import os
@@ -117,6 +132,7 @@ print ("<ul>")
 for key in os.environ.keys():
     print ("<li><span style='color:green'>%30s </span> : %s </li>" % (key,os.environ[key]))
 print ("</ul>")
+
 ```
 将以上点保存为 test.py ,并修改文件权限为 755，执行结果如下：
 
@@ -124,15 +140,20 @@ print ("</ul>")
 ## GET和POST方法
 浏览器客户端通过两种方法向服务器传递信息，这两种方法就是 GET 方法和 POST 方法。
 GET方法发送编码后的用户信息到服务端，数据信息包含在请求页面的URL上，以"?"号分割, 如下所示：
-```
+```
+
 http://www.test.com/cgi-bin/hello.py?key1=value1&key2=value2
+
 ```
 以下是一个简单的URL，使用GET方法向hello_get.py程序发送两个参数：
-```
+```
+
 /cgi-bin/test.py?name=菜鸟教程&url=http://www.runoob.com
+
 ```
 以下为hello_get.py文件的代码：
-```
+```
+
 #!/usr/bin/python3
 
 # CGI处理模块
@@ -156,13 +177,17 @@ print ("<body>")
 print ("<h2>%s官网：%s</h2>" % (site_name, site_url))
 print ("</body>")
 print ("</html>")
+
 ```
 文件保存后修改 hello_get.py，修改文件权限为 755：
-```chmod 755 hello_get.py ```
+```
+chmod 755 hello_get.py 
+```
 浏览器请求输出结果：
 
 以下是一个通过HTML的表单使用GET方法向服务器发送两个数据，提交的服务器脚本同样是hello_get.py文件，hello_get.html 代码如下：
-```
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -178,16 +203,20 @@ print ("</html>")
 </form>
 </body>
 </html>
+
 ```
 默认情况下 cgi-bin 目录只能存放脚本文件，我们将 hello_get.html 存储在 test 目录下，修改文件权限为 755：
-```
+```
+
 chmod 755 hello_get.html
+
 ```
 Gif 演示如下所示：
 
 使用POST方法向服务器传递数据是更安全可靠的，像一些敏感信息如用户密码等需要使用POST传输数据。
 以下同样是hello_get.py ，它也可以处理浏览器提交的POST表单数据:
-```
+```
+
 #!/usr/bin/python3
 
 # CGI处理模块
@@ -211,9 +240,11 @@ print ("<body>")
 print ("<h2>%s官网：%s</h2>" % (site_name, site_url))
 print ("</body>")
 print ("</html>")
+
 ```
 以下为表单通过POST方法（method="post"）向服务器脚本 hello_get.py 提交数据:
-```
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -230,11 +261,13 @@ print ("</html>")
 </body>
 </html>
 </form>
+
 ```
 Gif 演示如下所示：
 
 checkbox用于提交一个或者多个选项数据，HTML代码如下：
-```
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -249,9 +282,11 @@ checkbox用于提交一个或者多个选项数据，HTML代码如下：
 </form>
 </body>
 </html>
+
 ```
 以下为 checkbox.py 文件的代码：
-```
+```
+
 #!/usr/bin/python3
 
 # 引入 CGI 处理模块 
@@ -283,15 +318,19 @@ print ("<h2> 菜鸟教程是否选择了 : %s</h2>" % runoob_flag)
 print ("<h2> Google 是否选择了 : %s</h2>" % google_flag)
 print ("</body>")
 print ("</html>")
+
 ```
 修改 checkbox.py 权限：
-```
+```
+
 chmod 755 checkbox.py
+
 ```
 浏览器访问 Gif 演示图：
 
 Radio 只向服务器传递一个数据，HTML代码如下：
-```
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -306,9 +345,11 @@ Radio 只向服务器传递一个数据，HTML代码如下：
 </form>
 </body>
 </html>
+
 ```
 radiobutton.py 脚本代码如下：
-```
+```
+
 #!/usr/bin/python3
 
 # 引入 CGI 处理模块 
@@ -334,15 +375,19 @@ print ("<body>")
 print ("<h2> 选中的网站是 %s</h2>" % site)
 print ("</body>")
 print ("</html>")
+
 ```
 修改 radiobutton.py 权限：
-```
+```
+
 chmod 755 radiobutton.py
+
 ```
 浏览器访问 Gif 演示图：
 
 Textarea 向服务器传递多行数据，HTML代码如下：
-```
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -358,9 +403,11 @@ Textarea 向服务器传递多行数据，HTML代码如下：
 </form>
 </body>
 </html>
+
 ```
 textarea.py 脚本代码如下：
-```
+```
+
 #!/usr/bin/python3
 
 # 引入 CGI 处理模块 
@@ -386,15 +433,19 @@ print ("<body>")
 print ("<h2> 输入的内容是：%s</h2>" % text_content)
 print ("</body>")
 print ("</html>")
+
 ```
 修改 textarea.py 权限：
-```
+```
+
 chmod 755 textarea.py
+
 ```
 浏览器访问 Gif 演示图：
 
 HTML 下拉框代码如下：
-```
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -411,9 +462,11 @@ HTML 下拉框代码如下：
 </form>
 </body>
 </html>
+
 ```
 dropdown.py 脚本代码如下所示：
-```
+```
+
 #!/usr/bin/python3
 
 # 引入 CGI 处理模块 
@@ -439,10 +492,13 @@ print ("<body>")
 print ("<h2> 选中的选项是：%s</h2>" % dropdown_value)
 print ("</body>")
 print ("</html>")
+
 ```
 修改 dropdown.py 权限：
-```
+```
+
 chmod 755 dropdown.py
+
 ```
 浏览器访问 Gif 演示图：
 
@@ -454,13 +510,16 @@ chmod 755 dropdown.py
 cookie 就是在客户访问脚本的同时，通过客户的浏览器，在客户硬盘上写入纪录数据 
 ，当下次客户访问脚本时取回数据信息，从而达到身份判别的功能，cookie 常用在身份校验中。
 http cookie的发送是通过http头部来实现的，他早于文件的传递，头部set-cookie的语法如下：
-```
+```
+
 Set-cookie:name=name;expires=date;path=path;domain=domain;secure 
+
 ```
 ---
 ## Cookie设置 
 Cookie的设置非常简单，cookie会在http头部单独发送。以下实例在cookie中设置了name 和 expires：
-```
+```
+
 #!/usr/bin/python3
 # 
 print ('Content-Type: text/html')
@@ -477,10 +536,13 @@ print ("""
     </body>
 </html>
 """)
+
 ```
 将以上代码保存到 cookie_set.py，并修改 cookie_set.py 权限：
-```
+```
+
 chmod 755 cookie_set.py
+
 ```
 以上实例使用了 Set-Cookie 头信息来设置Cookie信息，可选项中设置了Cookie的其他属性，如过期时间Expires，域名Domain，路径Path。这些信息设置在 "Content-type:text/html"之前。
 
@@ -489,11 +551,14 @@ chmod 755 cookie_set.py
 检索Cookie信息
 
 Cookie信息检索页非常简单，Cookie信息存储在CGI的环境变量HTTP_COOKIE中，存储格式如下：
-```
+```
+
 key1=value1;key2=value2;key3=value3....
+
 ```
 以下是一个简单的CGI检索cookie信息的程序：
-```
+```
+
 #!/usr/bin/python3
 
 # 导入模块
@@ -528,15 +593,19 @@ print ("""
 </body>
 </html>
 """)
+
 ```
 将以上代码保存到 cookie_get.py，并修改 cookie_get.py 权限：
-```
+```
+
 chmod 755 cookie_get.py
+
 ```
 以上 cookie 设置颜色 Gif 如下所示：
 
 HTML设置上传文件的表单需要设置 enctype 属性为 multipart/form-data，代码如下所示：
-```
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -551,9 +620,11 @@ HTML设置上传文件的表单需要设置 enctype 属性为 multipart/form-dat
    </form>
 </body>
 </html>
+
 ```
 save_file.py脚本文件代码如下：
-```
+```
+
 #!/usr/bin/python3
 
 import cgi, os
@@ -587,22 +658,28 @@ Content-Type: text/html\n
 </body>
 </html>
 """ % (message,))
+
 ```
 将以上代码保存到 save_file.py，并修改 save_file.py 权限：
-```
+```
+
 chmod 755 save_file.py
+
 ```
 以上 cookie 设置颜色 Gif 如下所示：
 
 如果你使用的系统是Unix/Linux，你必须替换文件分隔符，在window下只需要使用open()语句即可：
-```
+```
+
 fn = os.path.basename(fileitem.filename.replace("\\", "/" ))
+
 ```
 ---
 ## 文件下载对话框
 我们先在当前目录下创建 foo.txt 文件，用于程序的下载。
 文件下载通过设置HTTP头信息来实现，功能代码如下：
-```
+```
+
 #!/usr/bin/python3
 
 # HTTP 头部
@@ -616,4 +693,5 @@ print (str)
 
 # 关闭文件
 fo.close()
+
 ```

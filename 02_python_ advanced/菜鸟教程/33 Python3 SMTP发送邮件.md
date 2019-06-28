@@ -2,15 +2,19 @@
 SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议,它是一组用于由源地址到目的地址传送邮件的规则，由它来控制信件的中转方式。
 python的smtplib提供了一种很方便的途径发送电子邮件。它对smtp协议进行了简单的封装。
 Python创建 SMTP 对象语法如下：
-```
+```
+
 import smtplib
 
 smtpObj = smtplib.SMTP( [host [, port [, local_hostname]]] )
+
 ```
 参数说明：
 Python SMTP对象使用sendmail方法发送邮件，语法如下：
-```
+```
+
 SMTP.sendmail(from_addr, to_addrs, msg[, mail_options, rcpt_options]
+
 ```
 参数说明：
 这里要注意一下第三个参数，msg是字符串，表示邮件。我们知道邮件一般由标题，发信人，收件人，邮件内容，附件等构成，发送邮件的时候，要注意msg的格式。这个格式就是smtp协议中定义的格式。
@@ -45,9 +49,11 @@ except smtplib.SMTPException:
 我们使用三个引号来设置邮件信息，标准邮件需要三个头部信息： From, To, 和 Subject ，每个信息直接使用空行分割。
 我们通过实例化 smtplib 模块的 SMTP 对象 smtpObj 来连接到 SMTP 访问，并使用 sendmail 方法来发送信息。
 执行以上程序，如果你本机安装sendmail，就会输出：
-```
+```
+
 $ python3 test.py 
 邮件发送成功
+
 ```
 查看我们的收件箱(一般在垃圾箱)，就可以查看到邮件信息：
 
@@ -120,9 +126,11 @@ except smtplib.SMTPException:
     print ("Error: 无法发送邮件")
 ```
 执行以上程序，如果你本机安装sendmail，就会输出：
-```
+```
+
 $ python3 test.py 
 邮件发送成功
+
 ```
 查看我们的收件箱(一般在垃圾箱)，就可以查看到邮件信息：
 
@@ -171,9 +179,11 @@ try:
 except smtplib.SMTPException:
     print ("Error: 无法发送邮件")
 ```
-```
+```
+
 $ python3 test.py 
 邮件发送成功
+
 ```
 查看我们的收件箱(一般在垃圾箱)，就可以查看到邮件信息：
 
@@ -227,9 +237,11 @@ try:
 except smtplib.SMTPException:
     print ("Error: 无法发送邮件")
 ```
-```
+```
+
 $ python3 test.py 
 邮件发送成功
+
 ```
 查看我们的收件箱(如果在垃圾箱可能需要移动到收件箱才可正常显示)，就可以查看到邮件信息：
 
@@ -274,9 +286,11 @@ if ret:
 else:
     print("邮件发送失败")
 ```
-```
+```
+
 $ python test.py 
 邮件发送成功
+
 ```
 发送成功后，登陆收件人邮箱即可查看：
 

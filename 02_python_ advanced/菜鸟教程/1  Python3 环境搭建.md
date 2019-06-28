@@ -19,15 +19,19 @@ Source Code 可用于 Linux 上的安装。
 以下为不同平台上安装 Python3 的方法。
 以下为在 Unix & Linux 平台上安装 Python 的简单步骤：
 以 Python3.6.1 版本为例：
-```
+```
+
 # tar -zxvf Python-3.6.1.tgz
 # cd Python-3.6.1
 # ./configure
 # make && make install
+
 ```
 检查 Python3 是否正常可用：
-```# python3 -V
-Python 3.6.1```
+```
+# python3 -V
+Python 3.6.1
+```
 以下为在 Window 平台上安装 Python 的简单步骤。
 打开 WEB 浏览器访问 https://www.python.org/downloads/windows/ ，一般就下载 executable installer，x86 表示是 32 位机子的，x86-64 表示 64 位机子的。 
 
@@ -46,7 +50,9 @@ Unix或Windows中路径变量为PATH（UNIX区分大小写，Windows不区分大
 注意: /usr/local/bin/python 是 Python 的安装目录。
 在环境变量中添加Python目录：
 在命令提示框中(cmd) : 输入 
-```path=%path%;C:\Python ```
+```
+path=%path%;C:\Python 
+```
 注意: C:\Python 是Python的安装目录。
 也可以通过以下方式设置：
 

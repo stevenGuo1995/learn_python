@@ -7,23 +7,29 @@ PyMySQL 遵循 Python 数据库 API v2.0 规范，并包含了 pure-Python MySQL
 在使用 PyMySQL 之前，我们需要确保 PyMySQL 已安装。
 PyMySQL 下载地址：https://github.com/PyMySQL/PyMySQL。
 如果还未安装，我们可以使用以下命令安装最新版的 PyMySQL：
-```
+```
+
 $ pip3 install PyMySQL
+
 ```
 如果你的系统不支持 pip 命令，可以使用以下方式安装：
 1、使用 git 命令下载安装包安装(你也可以手动下载)：
-```
+```
+
 $ git clone https://github.com/PyMySQL/PyMySQL
 $ cd PyMySQL/
 $ python3 setup.py install
+
 ```
 2、如果需要制定版本号，可以使用 curl 命令来安装：
-```
+```
+
 $ # X.X 为 PyMySQL 的版本号
 $ curl -L https://github.com/PyMySQL/PyMySQL/tarball/pymysql-X.X | tar xz
 $ cd PyMySQL*
 $ python3 setup.py install
 $ # 现在你可以删除 PyMySQL* 目录
+
 ```
 注意：请确保您有root权限来安装上述模块。
 ---
@@ -54,8 +60,10 @@ print ("Database version : %s " % data)
 db.close()
 ```
 执行以上脚本输出结果如下：
-```
+```
+
 Database version : 5.5.20-log
+
 ```
 ---
 ## 
@@ -153,7 +161,8 @@ except:
 db.close()
 ```
 以下代码使用变量向SQL语句中传递参数:
-```
+```
+
 ..................................
 user_id = "test123"
 password = "password"
@@ -161,6 +170,7 @@ password = "password"
 con.execute('insert into Login values( %s,  %s)' % \
              (user_id, password))
 ..................................
+
 ```
 ---
 ## 数据库查询操作
@@ -202,8 +212,10 @@ except:
 db.close()
 ```
 以上脚本执行结果如下：
-```
+```
+
 fname=Mac, lname=Mohan, age=20, sex=M, income=2000
+
 ```
 ---
 ## 数据库更新操作

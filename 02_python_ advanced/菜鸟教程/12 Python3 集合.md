@@ -5,10 +5,12 @@
 
 
 创建格式：
-```
+```
+
 parame = {value01,value02,...}
 或者
 set(value)
+
 ```
 ```
 ## 实例(Python 3.0+)
@@ -46,8 +48,10 @@ False
 ## 集合的基本操作
 
 语法格式如下：
-```
+```
+
 s.add( x )
+
 ```
 
 将元素 x 添加到集合 s 中，如果元素已存在，则不进行任何操作。
@@ -59,8 +63,10 @@ s.add( x )
 {'Taobao', 'Facebook', 'Google', 'Runoob'}
 ```
 还有一个方法，也可以添加元素，且参数可以是列表，元组，字典等，语法格式如下：
-```
-s.update( x )```
+```
+
+s.update( x )
+```
 x 可以有多个，用逗号分开。
 ```
 ## 实例(Python 3.0+)
@@ -74,8 +80,10 @@ x 可以有多个，用逗号分开。
 >>>
 ```
 语法格式如下：
-```
+```
+
 s.remove( x )
+
 ```
 
 将元素 x 从集合 s 中移除，如果元素不存在，则会发生错误。
@@ -92,7 +100,9 @@ KeyError: 'Facebook'
 >>>
 ```
 此外还有一个方法也是移除集合中的元素，且如果元素不存在，不会发生错误。格式如下所示：
-```s.discard( x )```
+```
+s.discard( x )
+```
 ```
 ## 实例(Python 3.0+)
 >>>thisset = set(("Google", "Runoob", "Taobao"))
@@ -101,8 +111,10 @@ KeyError: 'Facebook'
 {'Taobao', 'Google', 'Runoob'}
 ```
 我们也可以设置随机删除集合中的一个元素，语法格式如下：
-```
+```
+
 s.pop() 
+
 ```
 ```
 ## 脚本模式实例(Python 3.0+)
@@ -110,9 +122,11 @@ thisset = set(("Google", "Runoob", "Taobao", "Facebook"))
 x = thisset.pop()
  
 print(x)输出结果：
-```
+```
+
 $ python3 test.py 
 Runoob
+
 ```
 
 ```
@@ -129,7 +143,9 @@ Runoob
 >>>
 ```
 语法格式如下：
-```len(s)```
+```
+len(s)
+```
 计算集合 s 元素个数。
 ```
 ## 实例(Python 3.0+)
@@ -138,8 +154,10 @@ Runoob
 3
 ```
 语法格式如下：
-```
-s.clear()```
+```
+
+s.clear()
+```
 清空集合 s。
 ```
 ## 实例(Python 3.0+)
@@ -149,8 +167,10 @@ s.clear()```
 set()
 ```
 语法格式如下：
-```
+```
+
 x in s
+
 ```
 判断元素 x 是否在集合 s 中，存在返回 True，不存在返回 False。
 ```

@@ -6,8 +6,10 @@ Socket又称"套接字"，应用程序通常通过"套接字"向网络发出请�
 ---
 ## socket()函数
 Python 中，我们用 socket（）函数来创建套接字，语法格式如下：
-```
+```
+
 socket.socket([family[, type[, proto]]])
+
 ```
 函数|描述
 :-:|:-:
@@ -40,7 +42,8 @@ s.makefile()|创建一个与该套接字相关连的文件
 现在我们可以通过调用 bind(hostname, port) 函数来指定服务的 port(端口)。
 接着，我们调用 socket 对象的 accept 方法。该方法等待客户端的连接，并返回 connection 对象，表示已连接到客户端。
 完整代码如下：
-```
+```
+
 #!/usr/bin/python3
 # 文件名：server.py
 
@@ -72,11 +75,13 @@ while True:
     msg='欢迎访问菜鸟教程！'+ "\r\n"
     clientsocket.send(msg.encode('utf-8'))
     clientsocket.close()
+
 ```
 接下来我们写一个简单的客户端实例连接到以上创建的服务。端口号为 9999。
 socket.connect(hosname, port ) 方法打开一个 TCP 连接到主机为 hostname 端口为 port 的服务商。连接后我们就可以从服务端获取数据，记住，操作完成后需要关闭连接。
 完整代码如下：
-```
+```
+
 #!/usr/bin/python3
 # 文件名：client.py
 
@@ -102,18 +107,25 @@ msg = s.recv(1024)
 s.close()
 
 print (msg.decode('utf-8'))
+
 ```
 现在我们打开两个终端，第一个终端执行 server.py 文件：
-```$ python3 server.py```
+```
+$ python3 server.py
+```
 第二个终端执行 client.py 文件：
-```
+```
+
 $ python3 client.py 
 欢迎访问菜鸟教程！
 
+
 ```
 这时我们再打开第一个终端，就会看到有以下信息输出：
-```
+```
+
 连接地址： ('192.168.0.118', 33397)
+
 ```
 ---
 ## Python Internet 模块

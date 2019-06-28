@@ -2,7 +2,9 @@
 MySQL 是最流行的关系型数据库管理系统，如果你不不熟悉 MySQL，可以阅读我们的 MySQL 教程。
 本章节我们为大家介绍使用 mysql-connector 来连接使用 MySQL， mysql-connector 是 MySQL 官方提供的驱动器。
 我们可以使用 pip 命令来安装 mysql-connector：
-```python -m pip install mysql-connector```
+```
+python -m pip install mysql-connector
+```
 使用以下代码测试 mysql-connector 是否安装成功：
 ```
 ## demo_mysql_test.py:
@@ -161,8 +163,10 @@ mycursor.execute(sql, val)
 mydb.commit()    # 数据表内容有更新，必须使用到该语句
  
 print(mycursor.rowcount, "记录插入成功。")执行代码，输出结果为：
-```
+```
+
 1 记录插入成功
+
 ```
 
 ```
@@ -193,8 +197,10 @@ mycursor.executemany(sql, val)
 mydb.commit()    # 数据表内容有更新，必须使用到该语句
  
 print(mycursor.rowcount, "记录插入成功。")执行代码，输出结果为：
-```
+```
+
 4 记录插入成功。
+
 ```
 
 ```
@@ -220,8 +226,10 @@ mycursor.execute(sql, val)
 mydb.commit()
  
 print("1 条记录已插入, ID:", mycursor.lastrowid)执行代码，输出结果为：
-```
+```
+
 1 条记录已插入, ID: 6
+
 ```
 
 ```
@@ -246,13 +254,15 @@ myresult = mycursor.fetchall()     # fetchall() 获取所有记录
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 (1, 'RUNOOB', 'https://www.runoob.com')
 (2, 'Google', 'https://www.google.com')
 (3, 'Github', 'https://www.github.com')
 (4, 'Taobao', 'https://www.taobao.com')
 (5, 'stackoverflow', 'https://www.stackoverflow.com/')
 (6, 'Zhihu', 'https://www.zhihu.com')
+
 ```
 
 ```
@@ -275,13 +285,15 @@ myresult = mycursor.fetchall()
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 ('RUNOOB', 'https://www.runoob.com')
 ('Google', 'https://www.google.com')
 ('Github', 'https://www.github.com')
 ('Taobao', 'https://www.taobao.com')
 ('stackoverflow', 'https://www.stackoverflow.com/')
 ('Zhihu', 'https://www.zhihu.com')
+
 ```
 
 ```
@@ -303,8 +315,10 @@ mycursor.execute("SELECT * FROM sites")
 myresult = mycursor.fetchone()
  
 print(myresult)执行代码，输出结果为：
-```
+```
+
 (1, 'RUNOOB', 'https://www.runoob.com')
+
 ```
 
 ```
@@ -330,8 +344,10 @@ myresult = mycursor.fetchall()
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 (1, 'RUNOOB', 'https://www.runoob.com')
+
 ```
 
 ```
@@ -356,9 +372,11 @@ myresult = mycursor.fetchall()
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 (1, 'RUNOOB', 'https://www.runoob.com')
 (2, 'Google', 'https://www.google.com')
+
 ```
 
 ```
@@ -407,13 +425,15 @@ myresult = mycursor.fetchall()
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 (3, 'Github', 'https://www.github.com')
 (2, 'Google', 'https://www.google.com')
 (1, 'RUNOOB', 'https://www.runoob.com')
 (5, 'stackoverflow', 'https://www.stackoverflow.com/')
 (4, 'Taobao', 'https://www.taobao.com')
 (6, 'Zhihu', 'https://www.zhihu.com')
+
 ```
 
 ```
@@ -439,13 +459,15 @@ myresult = mycursor.fetchall()
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 (6, 'Zhihu', 'https://www.zhihu.com')
 (4, 'Taobao', 'https://www.taobao.com')
 (5, 'stackoverflow', 'https://www.stackoverflow.com/')
 (1, 'RUNOOB', 'https://www.runoob.com')
 (2, 'Google', 'https://www.google.com')
 (3, 'Github', 'https://www.github.com')
+
 ```
 
 ```
@@ -469,10 +491,12 @@ myresult = mycursor.fetchall()
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 (1, 'RUNOOB', 'https://www.runoob.com')
 (2, 'Google', 'https://www.google.com')
 (3, 'Github', 'https://www.github.com')
+
 ```
 
 ```
@@ -496,10 +520,12 @@ myresult = mycursor.fetchall()
  
 for x in myresult:
   print(x)执行代码，输出结果为：
-```
+```
+
 (2, 'Google', 'https://www.google.com')
 (3, 'Github', 'https://www.github.com')
 (4, 'Taobao', 'https://www.taobao.com')
+
 ```
 
 ```
@@ -526,8 +552,10 @@ mycursor.execute(sql)
 mydb.commit()
  
 print(mycursor.rowcount, " 条记录删除")执行代码，输出结果为：
-```
+```
+
 1  条记录删除
+
 ```
 
 ```
@@ -553,8 +581,10 @@ mycursor.execute(sql, na)
 mydb.commit()
  
 print(mycursor.rowcount, " 条记录删除")执行代码，输出结果为：
-```
+```
+
 1  条记录删除
+
 ```
 
 ```
@@ -581,8 +611,10 @@ mycursor.execute(sql)
 mydb.commit()
  
 print(mycursor.rowcount, " 条记录被修改")执行代码，输出结果为：
-```
+```
+
 1  条记录被修改
+
 ```
 
 ```
@@ -608,8 +640,10 @@ mycursor.execute(sql, val)
 mydb.commit()
  
 print(mycursor.rowcount, " 条记录被修改")执行代码，输出结果为：
-```
+```
+
 1  条记录被修改
+
 ```
 
 ```

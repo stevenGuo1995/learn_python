@@ -6,9 +6,11 @@
 你可以定义一个由自己想要功能的函数，以下是简单的规则：
 ---
 Python 定义函数使用 def 关键字，一般格式如下：
-```
+```
+
 def 函数名（参数列表）:
     函数体
+
 ```
 默认情况下，参数值和参数名称是按函数声明中定义的顺序匹配起来的。
 让我们使用函数来输出"Hello World！"：
@@ -40,9 +42,11 @@ h = 5
 print("width =", w, " height =", h, " area =", area(w, h))
 ```
 以上实例输出结果：
-```
+```
+
 Welcome Runoob
 width = 4  height = 5  area = 20
+
 ```
 ---
 ## 函数调用
@@ -64,17 +68,21 @@ printme("我要调用用户自定义函数!")
 printme("再次调用同一函数")
 ```
 以上实例输出结果：
-```
+```
+
 我要调用用户自定义函数!
 再次调用同一函数
+
 ```
 ---
 ## 参数传递
 在 python 中，类型属于对象，变量是没有类型的：
-```
+```
+
 a=[1,2,3]
 
 a="Runoob"
+
 ```
 以上代码中，[1,2,3] 是 List 类型，"Runoob" 是 String 类型，而变量 a 是没有类型，她仅仅是一个对象的引用（一个指针），可以是指向 List 类型对象，也可以是指向 String 类型对象。
 在 python 中，strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象。
@@ -110,9 +118,11 @@ changeme( mylist )
 print ("函数外取值: ", mylist)
 ```
 传入函数的和在末尾添加新内容的对象用的是同一个引用。故输出结果如下：
-```
+```
+
 函数内取值:  [10, 20, 30, [1, 2, 3, 4]]
 函数外取值:  [10, 20, 30, [1, 2, 3, 4]]
+
 ```
 ---
 ## 参数
@@ -133,11 +143,13 @@ def printme( str ):
 printme()
 ```
 以上实例输出结果：
-```
+```
+
 Traceback (most recent call last):
   File "test.py", line 10, in <module>
     printme()
 TypeError: printme() missing 1 required positional argument: 'str'
+
 ```
 关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。
 使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。
@@ -157,8 +169,10 @@ printme( str = "菜鸟教程")
 ```
 以上实例输出结果：
 
-```
+```
+
 菜鸟教程
+
 ```
 以下实例中演示了函数参数的使用不需要使用指定顺序：
 ```
@@ -176,9 +190,11 @@ def printinfo( name, age ):
 printinfo( age=50, name="runoob" )
 ```
 以上实例输出结果：
-```
+```
+
 名字:  runoob
 年龄:  50
+
 ```
 调用函数时，如果没有传递参数，则会使用默认参数。以下实例中如果没有传入 age 参数，则使用默认值：
 ```
@@ -198,19 +214,23 @@ print ("------------------------")
 printinfo( name="runoob" )
 ```
 以上实例输出结果：
-```
+```
+
 名字:  runoob
 年龄:  50
 ------------------------
 名字:  runoob
 年龄:  35
+
 ```
 你可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和上述 2 种参数不同，声明时不会命名。基本语法如下：
-```
+```
+
 def functionname([formal_args,] *var_args_tuple ):
    "函数_文档字符串"
    function_suite
    return [expression]
+
 ```
 加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。
 ```
@@ -228,9 +248,11 @@ def printinfo( arg1, *vartuple ):
 printinfo( 70, 60, 50 )
 ```
 以上实例输出结果：
-```输出: 
+```
+输出: 
 70
-(60, 50)```
+(60, 50)
+```
 ```
 ## 实例(Python 3.0+)
 #!/usr/bin/python3
@@ -249,21 +271,25 @@ printinfo( 10 )
 printinfo( 70, 60, 50 )
 ```
 以上实例输出结果：
-```
+```
+
 输出:
 10
 输出:
 70
 60
 50
+
 ```
 
 还有一种就是参数带两个星号 **基本语法如下：
-```
+```
+
 def functionname([formal_args,] **var_args_dict ):
    "函数_文档字符串"
    function_suite
    return [expression]
+
 ```
 加了两个星号 ** 的参数会以字典的形式导入。
 ```
@@ -281,16 +307,21 @@ def printinfo( arg1, **vardict ):
 printinfo(1, a=2,b=3)
 ```
 以上实例输出结果：
-```
+```
+
 输出: 
 1
 {'a': 2, 'b': 3}
+
 ```
 声明函数时，参数中星号 * 可以单独出现，例如:
-```def f(a,b,*,c):
-    return a+b+c```
+```
+def f(a,b,*,c):
+    return a+b+c
+```
 如果单独出现星号 * 后的参数必须用关键字传入。
-```>>> def f(a,b,*,c):
+```
+>>> def f(a,b,*,c):
 ...     return a+b+c
 ... 
 >>> f(1,2,3)   # 报错
@@ -299,14 +330,17 @@ Traceback (most recent call last):
 TypeError: f() takes 2 positional arguments but 3 were given
 >>> f(1,2,c=3) # 正常
 6
->>>```
+>>>
+```
 ---
 ## 匿名函数
 python 使用 lambda 来创建匿名函数。
 所谓匿名，意即不再使用 def 语句这样标准的形式定义一个函数。
 lambda 函数的语法只包含一个语句，如下：
-```
+```
+
 lambda [arg1 [,arg2,.....argn]]:expression
+
 ```
 如下实例：
 ```
@@ -321,9 +355,11 @@ print ("相加后的值为 : ", sum( 10, 20 ))
 print ("相加后的值为 : ", sum( 20, 20 ))
 ```
 以上实例输出结果：
-```
+```
+
 相加后的值为 :  30
 相加后的值为 :  40
+
 ```
 ---
 ## return语句
@@ -344,37 +380,46 @@ total = sum( 10, 20 )
 print ("函数外 : ", total)
 ```
 以上实例输出结果：
-```
+```
+
 函数内 :  30
 函数外 :  30
+
 ```
 ---
 ## 变量作用域
 Python 中，程序的变量并不是在哪个位置都可以访问的，访问权限决定于这个变量是在哪里赋值的。
 变量的作用域决定了在哪一部分程序可以访问哪个特定的变量名称。Python的作用域一共有4种，分别是：
 以 L –> E –> G –>B 的规则查找，即：在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内置中找。
-```
+```
+
 g_count = 0  # 全局作用域
 def outer():
     o_count = 1  # 闭包函数外的函数中
     def inner():
         i_count = 2  # 局部作用域
+
 ```
 内置作用域是通过一个名为 builtin 的标准模块来实现的，但是这个变量名自身并没有放入内置作用域内，所以必须导入这个文件才能够使用它。在Python3.0中，可以使用以下的代码来查看到底预定义了哪些变量:
-```>>> import builtins
->>> dir(builtins)```
+```
+>>> import builtins
+>>> dir(builtins)
+```
 Python 中只有模块（module），类（class）以及函数（def、lambda）才会引入新的作用域，其它的代码块（如 if/elif/else/、try/except、for/while等）是不会引入新的作用域的，也就是说这些语句内定义的变量，外部也可以访问，如下代码：
-```
+```
+
 >>> if True:
 ...  msg = 'I am from Runoob'
 ... 
 >>> msg
 'I am from Runoob'
 >>> 
+
 ```
 实例中 msg 变量定义在 if 语句块中，但外部还是可以访问的。
 如果将 msg 定义在函数中，则它就是局部变量，外部不能访问：
-```
+```
+
 >>> def test():
 ...     msg_inner = 'I am from Runoob'
 ... 
@@ -383,6 +428,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'msg_inner' is not defined
 >>> 
+
 ```
 从报错的信息上看，说明了 msg_inner 未定义，无法使用，因为它是局部变量，只有在函数内可以使用。
 ---
@@ -405,9 +451,11 @@ sum( 10, 20 )
 print ("函数外是全局变量 : ", total)
 ```
 以上实例输出结果：
-```
+```
+
 函数内是局部变量 :  30
 函数外是全局变量 :  0
+
 ```
 当内部作用域想修改外部作用域的变量时，就要用到global和nonlocal关键字了。
 以下实例修改全局变量 num：
@@ -425,10 +473,12 @@ fun1()
 print(num)
 ```
 以上实例输出结果：
-```
+```
+
 1
 123
 123
+
 ```
 如果要修改嵌套作用域（enclosing 作用域，外层非全局作用域）中的变量则需要 nonlocal 关键字了，如下实例：
 ```
@@ -446,9 +496,11 @@ def outer():
 outer()
 ```
 以上实例输出结果：
-```
+```
+
 100
 100
+
 ```
 另外有一种特殊情况，假设下面这段代码被运行：
 ```
@@ -463,13 +515,15 @@ test()
 ```
 
 以上程序执行，报错信息如下：
-```
+```
+
 Traceback (most recent call last):
   File "test.py", line 7, in <module>
     test()
   File "test.py", line 5, in test
     a = a + 1
 UnboundLocalError: local variable 'a' referenced before assignment
+
 ```
 错误信息为局部作用域引用错误，因为 test 函数中的 a 使用的是局部，未定义，无法修改。
 修改 a 为全局变量，通过函数参数传递，可以正常执行输出结果为：

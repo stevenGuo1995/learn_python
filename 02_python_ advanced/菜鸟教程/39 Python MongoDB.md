@@ -7,15 +7,25 @@ MongoDB 数据库安装与介绍可以查看我们的 MongoDB 教程。
 Python 要连接 MongoDB 需要 MongoDB 驱动，这里我们使用 PyMongo 驱动来连接。
 pip 是一个通用的 Python 包管理工具，提供了对 Python 包的查找、下载、安装、卸载的功能。
 安装 pymongo:
-```$ python3 -m pip3 install pymongo```
+```
+$ python3 -m pip3 install pymongo
+```
 也可以指定安装的版本:
-```$ python3 -m pip3 install pymongo==3.5.1```
+```
+$ python3 -m pip3 install pymongo==3.5.1
+```
 更新 pymongo 命令：
-```$ python3 -m pip3 install --upgrade pymongo```
+```
+$ python3 -m pip3 install --upgrade pymongo
+```
 旧版的 Python 可以使用 easy_install 来安装，easy_install 也是 Python 包管理工具。
-```$ python -m easy_install pymongo```
+```
+$ python -m easy_install pymongo
+```
 更新 pymongo 命令：
-```$ python -m easy_install -U pymongo```
+```
+$ python -m easy_install -U pymongo
+```
 接下来我们可以创建一个测试文件 demo_test_mongodb.py，代码如下：
 ```
 ## demo_test_mongodb.py 文件代码：

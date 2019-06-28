@@ -4,8 +4,10 @@
 默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。
 当然你也可以为源码文件指定不同的编码：
 
-```
+```
+
 # -*- coding: cp-1252 -*-
+
 ```
 上述定义允许在源文件中使用 Windows-1252 字符集中的字符编码，对应适合语言为保加利亚语、白罗斯语、马其顿语、俄语、塞尔维亚语。
 ---
@@ -19,10 +21,12 @@
 
 保留字即关键字，我们不能把它们用作任何标识符名称。Python 的标准库提供了一个 keyword 模块，可以输出当前版本的所有关键字：
 
-```
+```
+
 >>> import keyword
 >>> keyword.kwlist
 ['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
 ```
 ---
 ## 注释
@@ -37,8 +41,10 @@ Python中单行注释以 # 开头，实例如下：
 print ("Hello, Python!") # 第二个注释
 ```
 执行以上代码，输出结果为：
-```
+```
+
 Hello, Python!
+
 ```
 多行注释可以用多个 # 号，还有  ''' 和 """：
 ```
@@ -60,8 +66,10 @@ Hello, Python!
 print ("Hello, Python!")
 ```
 执行以上代码，输出结果为：
-```
+```
+
 Hello, Python!
+
 ```
 ---
 ## 行与缩进
@@ -78,44 +86,54 @@ else:
     print ("False")
 ```
 以下代码最后一行语句缩进数的空格数不一致，会导致运行错误：
-```
+```
+
 if True:
     print ("Answer")
     print ("True")
 else:
     print ("Answer")
   print ("False")    # 缩进不一致，会导致运行错误
+
 ```
 以上程序由于缩进不一致，执行后会出现类似以下错误：
-```
+```
+
  File "test.py", line 6
     print ("False")    # 缩进不一致，会导致运行错误
                                       ^
 IndentationError: unindent does not match any outer indentation level
+
 ```
 ---
 ## 多行语句
 Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠(\)来实现多行语句，例如：
-```
+```
+
 total = item_one + \
         item_two + \
         item_three
+
 ```
 在  [], {}, 或 () 中的多行语句，不需要使用反斜杠(\)，例如：
-```
+```
+
 total = ['item_one', 'item_two', 'item_three',
         'item_four', 'item_five']
+
 ```
 ---
 ## 数字(Number)类型
 python中数字有四种类型：整数、布尔型、浮点数和复数。
 ---
 ## 字符串(String)
-```
+```
+
 word = '字符串'
 sentence = "这是一个句子。"
 paragraph = """这是一个段落，
 可以由多行组成"""
+
 ```
 ```
 ## 实例(Python 3.0+)
@@ -138,7 +156,8 @@ print(r'hello\nrunoob')     # 在字符串前面添加一个 r，表示原始字
 ```
 这里的 r 指 raw，即 raw string。
 输出结果为：
-```Runoob
+```
+Runoob
 Runoo
 R
 noo
@@ -148,7 +167,8 @@ Runoob你好
 ------------------------------
 hello
 runoob
-hello\nrunoob```
+hello\nrunoob
+```
 ---
 ## 空行
 函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。
@@ -173,14 +193,18 @@ input("\n\n按下 enter 键后退出。")
 import sys; x = 'runoob'; sys.stdout.write(x + '\n')
 ```
 使用脚本执行以上代码，输出结果为：
-```
+```
+
 runoob
+
 ```
 使用交互式命令行执行，输出结果为：
-```
+```
+
 >>> import sys; x = 'runoob'; sys.stdout.write(x + '\n')
 runoob
 7
+
 ```
 此处的 7 表示字符数。
 ---
@@ -189,13 +213,15 @@ runoob
 像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。
 我们将首行及后面的代码组称为一个子句(clause)。
 如下实例：
-```
+```
+
 if expression : 
    suite
 elif expression : 
    suite 
 else : 
    suite
+
 ```
 ---
 ## Print 输出
@@ -217,11 +243,13 @@ print( y, end=" " )
 print()
 ```
 以上实例执行结果为：
-```
+```
+
 a
 b
 ---------
 a b
+
 ```
 ---
 ## import 与 from...import
@@ -253,7 +281,8 @@ print('path:',path) # 因为已经导入path成员，所以此处引用时不需
 ---
 ## 命令行参数
 很多程序可以执行一些操作来查看一些基本信息，Python可以使用-h参数查看各参数帮助信息：
-```
+```
+
 $ python -h
 usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ...
 Options and arguments (and corresponding environment variables):
@@ -263,5 +292,6 @@ Options and arguments (and corresponding environment variables):
 -h     : print this help message and exit
 
 [ etc. ]
+
 ```
 我们在使用脚本形式执行 Python 时，可以接收命令行输入的参数，具体使用可以参照 Python 3 命令行参数。

@@ -50,9 +50,11 @@ print("MyClass 类的方法 f 输出为：", x.f())
 ```
 以上创建了一个新的类实例并将该对象赋给局部变量 x，x 为空的对象。
 执行以上程序输出结果为：
-```
+```
+
 MyClass 类的属性 i 为： 12345
 MyClass 类的方法 f 输出为： hello world
+
 ```
 ---
 类有一个名为 __init__() 的特殊方法（构造方法），该方法在类实例化时会自动调用，像下面这样：
@@ -62,8 +64,10 @@ def __init__(self):
     self.data = []
 ```
 类定义了 __init__() 方法，类的实例化操作会自动调用 __init__() 方法。如下实例化类 MyClass，对应的 __init__() 方法就会被调用:
-```
+```
+
 x = MyClass()
+
 ```
 当然， __init__() 方法可以有参数，参数通过 __init__() 传递到类的实例化操作上。例如:
 
@@ -89,9 +93,11 @@ t = Test()
 t.prt()
 ```
 以上实例执行结果为：
-```
+```
+
 <__main__.Test instance at 0x100771878>
 __main__.Test
+
 ```
 从执行结果可以很明显的看出，self 代表的是类的实例，代表当前对象的地址，而 self.class 则指向类。
 self 不是 python 关键字，我们把他换成 runoob 也是可以正常执行的:
@@ -105,9 +111,11 @@ t = Test()
 t.prt()
 ```
 以上实例执行结果为：
-```
+```
+
 <__main__.Test instance at 0x100771878>
 __main__.Test
+
 ```
 ---
 ## 类的方法
@@ -138,8 +146,10 @@ p = people('runoob',10,30)
 p.speak()
 ```
 执行以上程序输出结果为：
-```
+```
+
 runoob 说: 我 10 岁。
+
 ```
 ---
 ## 继承
@@ -157,8 +167,10 @@ class DerivedClassName(BaseClassName1):
 
 BaseClassName（示例中的基类名）必须与派生类定义在一个作用域内。除了类，还可以用表达式，基类定义在另一个模块中时这一点非常有用:
 
-```
+```
+
 class DerivedClassName(modname.BaseClassName):
+
 ```
 ```
 ## 实例(Python 3.0+)
@@ -196,8 +208,10 @@ s = student('ken',10,60,3)
 s.speak()
 ```
 执行以上程序输出结果为：
-```
+```
+
 ken 说: 我 10 岁了，我在读 3 年级
+
 ```
 ---
 ## 多继承
@@ -263,8 +277,10 @@ test = sample("Tim",25,80,4,"Python")
 test.speak()   #方法名同，默认调用的是在括号中排前地父类的方法
 ```
 执行以上程序输出结果为：
-```
+```
+
 我叫 Tim，我是一个演说家，我演讲的主题是 Python
+
 ```
 ---
 ## 
@@ -289,9 +305,11 @@ super(Child,c).myMethod() #用子类对象调用父类已被覆盖的方法
 ```
 super() 函数是用于调用父类(超类)的一个方法。
 执行以上程序输出结果为：
-```
+```
+
 调用子类方法
 调用父类方法
+
 ```
 更多文档：
  Python 子类继承父类构造函数说明 
@@ -324,7 +342,8 @@ print (counter.publicCount)
 print (counter.__secretCount)  # 报错，实例不能访问私有变量
 ```
 执行以上程序输出结果为：
-```
+```
+
 1
 2
 2
@@ -332,6 +351,7 @@ Traceback (most recent call last):
   File "test.py", line 16, in <module>
     print (counter.__secretCount)  # 报错，实例不能访问私有变量
 AttributeError: 'JustCounter' object has no attribute '__secretCount'
+
 ```
 类的私有方法实例如下：
 ```
@@ -382,6 +402,8 @@ v2 = Vector(5,-2)
 print (v1 + v2)
 ```
 以上代码执行结果如下所示:
-```
+```
+
 Vector(7,8)
+
 ```
