@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf99d3ae-c2a8-48af-bbfc-ccf8fc5be5f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/django_basic.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../01_python_basic/04 dict.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../01_python_basic/04 dict.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../01_python_basic/06 函数.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../01_python_basic/06 函数.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../01_python_basic/07 类和对象.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../01_python_basic/07 类和对象.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_python_ advanced/04_numpy.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../02_python_ advanced/04_numpy.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_basic/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="380">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
               </folding>
@@ -34,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/django_basic/django_basic/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="3" column="59" lean-forward="true" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+              <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -120,16 +114,17 @@
       <workItem from="1559272142820" duration="212000" />
       <workItem from="1559272358172" duration="2545000" />
       <workItem from="1559718497032" duration="750000" />
+      <workItem from="1562309874491" duration="158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3507000" />
+    <option name="totallyTimeSpent" value="3665000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="1" width="1404" height="1335" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25669643" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26041666" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -143,7 +138,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19733556" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19733556" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -158,8 +153,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/django_basic/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="380">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#84#93#0" expanded="true" />
           </folding>
@@ -169,7 +164,7 @@
     <entry file="file://$PROJECT_DIR$/django_basic/django_basic/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="3" column="59" lean-forward="true" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
         </state>
       </provider>
     </entry>
